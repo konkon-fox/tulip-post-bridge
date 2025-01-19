@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Tulip Post Bridge
 // @namespace    https://github.com/konkon-fox
-// @version      1.0.0
+// @version      1.0.1
 // @description  webブラウザ版農園から投稿するためのスクリプトです。専ブラと同様にbbs.phpへpostします。
 // @author       https://github.com/konkon-fox
 // @match        https://tulipplantation.com/*
@@ -65,6 +65,7 @@
         return `${entry[0]}=${Encoding.urlEncode(array)}`;
       })
       .join('&');
+    const ua = window.navigator?.userAgent || '';
     try {
       const response = await fetch('/test/bbs.php', {
         method: 'POST',
@@ -73,7 +74,7 @@
         headers: {
           'Content-Type':
             'application/x-www-form-urlencoded; charset=Shift_JIS',
-          'user-agent': 'Mozilla/1.00',
+          'user-agent': `${ua}_Mozilla/5.0`,
           Referer: 'https://tulipplantation.com/',
         },
       });
