@@ -5,8 +5,8 @@
 // @description  webブラウザ版農園から投稿するためのスクリプトです。専ブラと同様にbbs.phpへpostします。
 // @author       https://github.com/konkon-fox
 // @match        https://tulipplantation.com/*
-// @updateURL    https://github.com/konkon-fox/tulip-post-bridge/blob/main/tulip-post-bridge.user.js
-// @downloadURL  https://github.com/konkon-fox/tulip-post-bridge/blob/main/tulip-post-bridge.user.js
+// @updateURL    https://github.com/konkon-fox/tulip-post-bridge/raw/refs/heads/main/tulip-post-bridge.user.js
+// @downloadURL  https://github.com/konkon-fox/tulip-post-bridge/raw/refs/heads/main/tulip-post-bridge.user.js
 // @grant        none
 // @require      https://unpkg.com/encoding-japanese@2.2.0/encoding.min.js
 // @license      MIT https://opensource.org/licenses/MIT
