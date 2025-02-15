@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Tulip Post Bridge
 // @namespace    https://github.com/konkon-fox
-// @version      1.0.1
+// @version      1.0.2
 // @description  webブラウザ版農園から投稿するためのスクリプトです。専ブラと同様にbbs.phpへpostします。
 // @author       https://github.com/konkon-fox
 // @match        https://tulipplantation.com/*
@@ -54,7 +54,6 @@
       formData.append('subject', replaceEmoji(postForm.title.value));
     }
     formData.append('time', '1');
-    postForm.comment.value = '';
     const formDataString = [...formData.entries()]
       .map((entry) => {
         const array = Encoding.convert(Encoding.stringToCode(entry[1]), {
@@ -88,6 +87,7 @@
         if (postForm.title) {
           location.href = `/${postForm.board.value}/?m=subback`;
         }
+        postForm.comment.value = '';
       }
     } catch (e) {
       console.error(e);
