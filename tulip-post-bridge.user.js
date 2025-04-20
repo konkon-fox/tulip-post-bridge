@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Tulip Post Bridge
 // @namespace    https://github.com/konkon-fox
-// @version      1.0.2
+// @version      1.0.3
 // @description  webブラウザ版農園から投稿するためのスクリプトです。専ブラと同様にbbs.phpへpostします。
 // @author       https://github.com/konkon-fox
 // @match        https://tulipplantation.com/*
@@ -56,7 +56,8 @@
     formData.append('time', '1');
     const formDataString = [...formData.entries()]
       .map((entry) => {
-        const array = Encoding.convert(Encoding.stringToCode(entry[1]), {
+        const mes = entry[1].replace(/〜/g, '～');
+        const array = Encoding.convert(Encoding.stringToCode(mes), {
           from: 'UNICODE',
           to: 'SJIS',
           type: 'array',
